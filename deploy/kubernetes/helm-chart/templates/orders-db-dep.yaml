@@ -41,7 +41,5 @@ spec:
         - name: tmp-volume
           emptyDir: {}
         - name: data-volume
-          emptyDir: {}
-
-          # persistentVolumeClaim:
-          #   claimName: orders-db
+          persistentVolumeClaim:
+            claimName: orders-db

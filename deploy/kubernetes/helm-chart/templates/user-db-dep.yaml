@@ -41,4 +41,19 @@ spec:
         - name: tmp-volume
           emptyDir: {}
         - name: data-volume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: user-db
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    name: user-db
+  name: user-db
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  volumeMode: Filesystem

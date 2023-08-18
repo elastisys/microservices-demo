@@ -1,0 +1,152 @@
+I0531 10:49:06.069363       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 5 items received
+I0531 10:50:28.010610       1 controller.go:1471] delete "pvc-922d4439-303d-43dc-8e93-6dc74d366d19": started
+I0531 10:50:28.010683       1 connection.go:183] GRPC call: /csi.v1.Controller/DeleteVolume
+I0531 10:50:28.010691       1 connection.go:184] GRPC request: {"volume_id":"0150a170-13ba-4737-bfe9-652471b619e0"}
+I0531 10:50:28.025630       1 controller.go:1471] delete "pvc-6568c276-c8c1-4848-983d-d93d58119ef5": started
+I0531 10:50:28.025692       1 connection.go:183] GRPC call: /csi.v1.Controller/DeleteVolume
+I0531 10:50:28.025700       1 connection.go:184] GRPC request: {"volume_id":"01322566-dc56-4f22-8992-90e9546fdcb2"}
+I0531 10:50:28.448448       1 connection.go:186] GRPC response: {}
+I0531 10:50:28.448492       1 connection.go:187] GRPC error: <nil>
+I0531 10:50:28.448507       1 controller.go:1486] delete "pvc-922d4439-303d-43dc-8e93-6dc74d366d19": volume deleted
+I0531 10:50:28.472381       1 controller.go:1531] delete "pvc-922d4439-303d-43dc-8e93-6dc74d366d19": persistentvolume deleted
+I0531 10:50:28.472415       1 controller.go:1536] delete "pvc-922d4439-303d-43dc-8e93-6dc74d366d19": succeeded
+I0531 10:50:28.516690       1 connection.go:186] GRPC response: {}
+I0531 10:50:28.516726       1 connection.go:187] GRPC error: <nil>
+I0531 10:50:28.516736       1 controller.go:1486] delete "pvc-6568c276-c8c1-4848-983d-d93d58119ef5": volume deleted
+I0531 10:50:28.531475       1 controller.go:1531] delete "pvc-6568c276-c8c1-4848-983d-d93d58119ef5": persistentvolume deleted
+I0531 10:50:28.531498       1 controller.go:1536] delete "pvc-6568c276-c8c1-4848-983d-d93d58119ef5": succeeded
+I0531 10:51:33.536787       1 controller.go:1337] provision "sock-shop/carts-db" class "standard": started
+I0531 10:51:33.536902       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 10:51:33.537034       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"carts-db", UID:"99fd8116-a645-44f3-8d3a-e53bbddfbdf1", APIVersion:"v1", ResourceVersion:"2265574", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/carts-db"
+I0531 10:51:33.536916       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 10:51:33.582181       1 controller.go:1337] provision "sock-shop/orders-db" class "standard": started
+I0531 10:51:33.582296       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 10:51:33.582329       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 10:51:33.582520       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"orders-db", UID:"567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f", APIVersion:"v1", ResourceVersion:"2265576", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/orders-db"
+I0531 10:51:37.018989       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 9 items received
+I0531 10:51:44.785071       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"01d53889-654c-4378-a47c-58e0b8902bd8"}}
+I0531 10:51:44.785157       1 connection.go:187] GRPC error: <nil>
+I0531 10:51:44.785166       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:01d53889-654c-4378-a47c-58e0b8902bd8 VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 10:51:44.785382       1 controller.go:858] successfully created PV pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1 for PVC carts-db and csi volume name 01d53889-654c-4378-a47c-58e0b8902bd8
+I0531 10:51:44.785472       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:01d53889-654c-4378-a47c-58e0b8902bd8,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 10:51:44.785537       1 controller.go:1442] provision "sock-shop/carts-db" class "standard": volume "pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1" provisioned
+I0531 10:51:44.785599       1 controller.go:1455] provision "sock-shop/carts-db" class "standard": succeeded
+I0531 10:51:44.785609       1 volume_store.go:154] Saving volume pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1
+I0531 10:51:44.801301       1 volume_store.go:157] Volume pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1 saved
+I0531 10:51:44.801343       1 controller.go:1069] Claim processing succeeded, removing PVC 99fd8116-a645-44f3-8d3a-e53bbddfbdf1 from claims in progress
+I0531 10:51:44.801469       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"carts-db", UID:"99fd8116-a645-44f3-8d3a-e53bbddfbdf1", APIVersion:"v1", ResourceVersion:"2265574", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-99fd8116-a645-44f3-8d3a-e53bbddfbdf1
+I0531 10:51:46.472623       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"011b2edc-6189-4733-9795-f314e2d861cf"}}
+I0531 10:51:46.472700       1 connection.go:187] GRPC error: <nil>
+I0531 10:51:46.472706       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:011b2edc-6189-4733-9795-f314e2d861cf VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 10:51:46.472742       1 controller.go:858] successfully created PV pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f for PVC orders-db and csi volume name 011b2edc-6189-4733-9795-f314e2d861cf
+I0531 10:51:46.472750       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:011b2edc-6189-4733-9795-f314e2d861cf,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 10:51:46.472795       1 controller.go:1442] provision "sock-shop/orders-db" class "standard": volume "pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f" provisioned
+I0531 10:51:46.472802       1 controller.go:1455] provision "sock-shop/orders-db" class "standard": succeeded
+I0531 10:51:46.472806       1 volume_store.go:154] Saving volume pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f
+I0531 10:51:46.490843       1 volume_store.go:157] Volume pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f saved
+I0531 10:51:46.490920       1 controller.go:1069] Claim processing succeeded, removing PVC 567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f from claims in progress
+I0531 10:51:46.491014       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"orders-db", UID:"567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f", APIVersion:"v1", ResourceVersion:"2265576", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-567b1531-c54c-4d9f-a32f-0a6b8f6b0e5f
+I0531 10:52:15.762221       1 reflector.go:382] k8s.io/client-go/informers/factory.go:134: forcing resync
+I0531 10:52:15.846557       1 reflector.go:382] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: forcing resync
+I0531 10:52:24.997398       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 0 items received
+I0531 10:54:43.009922       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 0 items received
+I0531 10:55:17.977578       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 17 items received
+I0531 10:56:35.082673       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 2 items received
+I0531 10:57:03.023483       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 10 items received
+I0531 10:57:32.005169       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 4 items received
+I0531 11:01:40.015653       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 7 items received
+I0531 11:03:13.991220       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 0 items received
+I0531 11:04:54.031585       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 0 items received
+I0531 11:05:28.018514       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 0 items received
+I0531 11:06:13.089577       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 2 items received
+I0531 11:07:15.762705       1 reflector.go:382] k8s.io/client-go/informers/factory.go:134: forcing resync
+I0531 11:07:15.847035       1 reflector.go:382] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: forcing resync
+I0531 11:08:43.021509       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 5 items received
+I0531 11:10:58.994010       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 7 items received
+I0531 11:12:21.042530       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 3 items received
+I0531 11:14:15.025640       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 0 items received
+I0531 11:14:26.740237       1 controller.go:1337] provision "sock-shop/carts-db-tmp" class "standard": started
+I0531 11:14:26.740547       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 11:14:26.740579       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-af6421a4-c412-43b8-83d7-348409e60d5d","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 11:14:26.740664       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"carts-db-tmp", UID:"af6421a4-c412-43b8-83d7-348409e60d5d", APIVersion:"v1", ResourceVersion:"2273793", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/carts-db-tmp"
+I0531 11:14:26.856719       1 controller.go:1337] provision "sock-shop/orders-db-tmp" class "standard": started
+I0531 11:14:26.856840       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 11:14:26.857168       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 11:14:26.856982       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"orders-db-tmp", UID:"727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a", APIVersion:"v1", ResourceVersion:"2273801", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/orders-db-tmp"
+I0531 11:14:26.898981       1 controller.go:1337] provision "sock-shop/user-db" class "standard": started
+I0531 11:14:26.899121       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 11:14:26.899444       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 11:14:26.899239       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"user-db", UID:"9b2bd9bf-8847-4d83-9e03-04a297b58281", APIVersion:"v1", ResourceVersion:"2273805", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/user-db"
+I0531 11:14:26.947776       1 controller.go:1337] provision "sock-shop/user-db-tmp" class "standard": started
+I0531 11:14:26.948040       1 connection.go:183] GRPC call: /csi.v1.Controller/CreateVolume
+I0531 11:14:26.948191       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"user-db-tmp", UID:"f1eb0420-d05f-443a-836e-29c3c9dcfd98", APIVersion:"v1", ResourceVersion:"2273810", FieldPath:""}): type: 'Normal' reason: 'Provisioning' External provisioner is provisioning volume for claim "sock-shop/user-db-tmp"
+I0531 11:14:26.948094       1 connection.go:184] GRPC request: {"capacity_range":{"required_bytes":10737418240},"name":"pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98","volume_capabilities":[{"AccessType":{"Mount":{}},"access_mode":{"mode":1}}]}
+I0531 11:14:36.804320       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"015bcfe3-a73c-4b2d-999d-8f9fdcfb56e3"}}
+I0531 11:14:36.804441       1 connection.go:187] GRPC error: <nil>
+I0531 11:14:36.804454       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:015bcfe3-a73c-4b2d-999d-8f9fdcfb56e3 VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 11:14:36.804503       1 controller.go:858] successfully created PV pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a for PVC orders-db-tmp and csi volume name 015bcfe3-a73c-4b2d-999d-8f9fdcfb56e3
+I0531 11:14:36.804517       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:015bcfe3-a73c-4b2d-999d-8f9fdcfb56e3,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 11:14:36.804579       1 controller.go:1442] provision "sock-shop/orders-db-tmp" class "standard": volume "pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a" provisioned
+I0531 11:14:36.804591       1 controller.go:1455] provision "sock-shop/orders-db-tmp" class "standard": succeeded
+I0531 11:14:36.804595       1 volume_store.go:154] Saving volume pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a
+I0531 11:14:36.819421       1 volume_store.go:157] Volume pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a saved
+I0531 11:14:36.819717       1 controller.go:1069] Claim processing succeeded, removing PVC 727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a from claims in progress
+I0531 11:14:36.819845       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"orders-db-tmp", UID:"727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a", APIVersion:"v1", ResourceVersion:"2273801", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-727c8a3e-d1f4-4cf5-919f-6fc57ce2a39a
+I0531 11:14:37.651335       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"013f6434-75b7-4bed-8cf3-f4f848f08e52"}}
+I0531 11:14:37.651463       1 connection.go:187] GRPC error: <nil>
+I0531 11:14:37.651470       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:013f6434-75b7-4bed-8cf3-f4f848f08e52 VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 11:14:37.651625       1 controller.go:858] successfully created PV pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98 for PVC user-db-tmp and csi volume name 013f6434-75b7-4bed-8cf3-f4f848f08e52
+I0531 11:14:37.651689       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:013f6434-75b7-4bed-8cf3-f4f848f08e52,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 11:14:37.651740       1 controller.go:1442] provision "sock-shop/user-db-tmp" class "standard": volume "pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98" provisioned
+I0531 11:14:37.651751       1 controller.go:1455] provision "sock-shop/user-db-tmp" class "standard": succeeded
+I0531 11:14:37.651756       1 volume_store.go:154] Saving volume pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98
+I0531 11:14:37.660592       1 volume_store.go:157] Volume pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98 saved
+I0531 11:14:37.660828       1 controller.go:1069] Claim processing succeeded, removing PVC f1eb0420-d05f-443a-836e-29c3c9dcfd98 from claims in progress
+I0531 11:14:37.660894       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"user-db-tmp", UID:"f1eb0420-d05f-443a-836e-29c3c9dcfd98", APIVersion:"v1", ResourceVersion:"2273810", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-f1eb0420-d05f-443a-836e-29c3c9dcfd98
+I0531 11:14:38.471925       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"01808903-83a6-4d88-9126-771342ea62b9"}}
+I0531 11:14:38.471991       1 connection.go:187] GRPC error: <nil>
+I0531 11:14:38.472007       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:01808903-83a6-4d88-9126-771342ea62b9 VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 11:14:38.472049       1 controller.go:858] successfully created PV pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281 for PVC user-db and csi volume name 01808903-83a6-4d88-9126-771342ea62b9
+I0531 11:14:38.472057       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:01808903-83a6-4d88-9126-771342ea62b9,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 11:14:38.472146       1 controller.go:1442] provision "sock-shop/user-db" class "standard": volume "pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281" provisioned
+I0531 11:14:38.472161       1 controller.go:1455] provision "sock-shop/user-db" class "standard": succeeded
+I0531 11:14:38.472165       1 volume_store.go:154] Saving volume pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281
+I0531 11:14:38.484068       1 volume_store.go:157] Volume pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281 saved
+I0531 11:14:38.484138       1 controller.go:1069] Claim processing succeeded, removing PVC 9b2bd9bf-8847-4d83-9e03-04a297b58281 from claims in progress
+I0531 11:14:38.484173       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"user-db", UID:"9b2bd9bf-8847-4d83-9e03-04a297b58281", APIVersion:"v1", ResourceVersion:"2273805", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-9b2bd9bf-8847-4d83-9e03-04a297b58281
+I0531 11:14:39.053281       1 connection.go:186] GRPC response: {"volume":{"accessible_topology":[{"segments":{"region":"fi-hel1"}}],"capacity_bytes":10737418240,"volume_id":"01190fef-7266-4cb0-bfe1-f8d3133d2885"}}
+I0531 11:14:39.053374       1 connection.go:187] GRPC error: <nil>
+I0531 11:14:39.053408       1 controller.go:774] create volume rep: {CapacityBytes:10737418240 VolumeId:01190fef-7266-4cb0-bfe1-f8d3133d2885 VolumeContext:map[] ContentSource:<nil> AccessibleTopology:[segments:<key:"region" value:"fi-hel1" > ] XXX_NoUnkeyedLiteral:{} XXX_unrecognized:[] XXX_sizecache:0}
+I0531 11:14:39.053500       1 controller.go:858] successfully created PV pvc-af6421a4-c412-43b8-83d7-348409e60d5d for PVC carts-db-tmp and csi volume name 01190fef-7266-4cb0-bfe1-f8d3133d2885
+I0531 11:14:39.053515       1 controller.go:874] successfully created PV {GCEPersistentDisk:nil AWSElasticBlockStore:nil HostPath:nil Glusterfs:nil NFS:nil RBD:nil ISCSI:nil Cinder:nil CephFS:nil FC:nil Flocker:nil FlexVolume:nil AzureFile:nil VsphereVolume:nil Quobyte:nil AzureDisk:nil PhotonPersistentDisk:nil PortworxVolume:nil ScaleIO:nil Local:nil StorageOS:nil CSI:&CSIPersistentVolumeSource{Driver:storage.csi.upcloud.com,VolumeHandle:01190fef-7266-4cb0-bfe1-f8d3133d2885,ReadOnly:false,FSType:,VolumeAttributes:map[string]string{storage.kubernetes.io/csiProvisionerIdentity: 1653981735731-8081-storage.csi.upcloud.com,},ControllerPublishSecretRef:nil,NodeStageSecretRef:nil,NodePublishSecretRef:nil,ControllerExpandSecretRef:nil,}}
+I0531 11:14:39.053590       1 controller.go:1442] provision "sock-shop/carts-db-tmp" class "standard": volume "pvc-af6421a4-c412-43b8-83d7-348409e60d5d" provisioned
+I0531 11:14:39.053600       1 controller.go:1455] provision "sock-shop/carts-db-tmp" class "standard": succeeded
+I0531 11:14:39.053606       1 volume_store.go:154] Saving volume pvc-af6421a4-c412-43b8-83d7-348409e60d5d
+I0531 11:14:39.065475       1 volume_store.go:157] Volume pvc-af6421a4-c412-43b8-83d7-348409e60d5d saved
+I0531 11:14:39.065534       1 controller.go:1069] Claim processing succeeded, removing PVC af6421a4-c412-43b8-83d7-348409e60d5d from claims in progress
+I0531 11:14:39.065614       1 event.go:285] Event(v1.ObjectReference{Kind:"PersistentVolumeClaim", Namespace:"sock-shop", Name:"carts-db-tmp", UID:"af6421a4-c412-43b8-83d7-348409e60d5d", APIVersion:"v1", ResourceVersion:"2273793", FieldPath:""}): type: 'Normal' reason: 'ProvisioningSucceeded' Successfully provisioned volume pvc-af6421a4-c412-43b8-83d7-348409e60d5d
+I0531 11:15:12.106973       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 0 items received
+I0531 11:15:15.022224       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 42 items received
+I0531 11:19:18.051595       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 19 items received
+I0531 11:19:52.996681       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 22 items received
+I0531 11:19:54.040246       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 5 items received
+I0531 11:21:09.115243       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 6 items received
+I0531 11:22:15.763699       1 reflector.go:382] k8s.io/client-go/informers/factory.go:134: forcing resync
+I0531 11:22:15.847952       1 reflector.go:382] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: forcing resync
+I0531 11:23:56.029368       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 11 items received
+I0531 11:25:22.006449       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 0 items received
+I0531 11:26:38.131789       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 2 items received
+I0531 11:27:30.051533       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 2 items received
+I0531 11:27:34.059567       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 0 items received
+I0531 11:29:41.041203       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 1 items received
+I0531 11:30:44.013063       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 6 items received
+I0531 11:33:12.144825       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 0 items received
+I0531 11:33:15.066131       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 2 items received
+I0531 11:33:17.058130       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.StorageClass total 0 items received
+I0531 11:36:17.047957       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.VolumeAttachment total 0 items received
+I0531 11:37:15.764681       1 reflector.go:382] k8s.io/client-go/informers/factory.go:134: forcing resync
+I0531 11:37:15.848096       1 reflector.go:382] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: forcing resync
+I0531 11:38:25.018584       1 reflector.go:536] k8s.io/client-go/informers/factory.go:134: Watch close - *v1.PersistentVolumeClaim total 3 items received
+I0531 11:40:48.070201       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:845: Watch close - *v1.PersistentVolume total 0 items received
+I0531 11:41:03.161089       1 reflector.go:536] sigs.k8s.io/sig-storage-lib-external-provisioner/v8/controller/controller.go:848: Watch close - *v1.StorageClass total 6 items received
+

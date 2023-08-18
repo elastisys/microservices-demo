@@ -41,4 +41,5 @@ spec:
         - name: tmp-volume
           emptyDir: {}
         - name: data-volume
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: carts-db
